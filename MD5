@@ -1,8 +1,8 @@
-ea086e171e41ad268358b8c1366e9a8b *DESCRIPTION
+274ebe0048dd5ccb6136097666b6311f *DESCRIPTION
 df390c53434517b304ac5db487184641 *NAMESPACE
 ddd746f0394b094aeba11d61ee1807af *R/plot.tabu.R
 ec2702ccad6751c9ba3b7734e8718a6a *R/summary.tabu.R
 2fb113468325cd1570e8241b2fbcf2b7 *R/tabuSearch.R
 22360624ae9de314d43eac67ae747dbf *man/plot.tabu.Rd
 c3b9a3a5808cbb00687749bd35684bff *man/summary.tabu.Rd
-e29b843d5211aa2f9c4531430e1f4209 *man/tabuSearch.Rd
+6bf0d9833d6221f034e72fa4bfb84f8a *man/tabuSearch.Rd
