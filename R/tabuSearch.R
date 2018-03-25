@@ -52,22 +52,21 @@ function(size = 10, iters = 100, objFunc = NULL, config = NULL, neigh = size, li
             iter <- iter + 1
     
             for (i in 2:iters){
-                
                 neighboursEUtility <- matrix(0, 1, size)  
                 configTemp <- t(matrix(config, size, neigh))
                 randomNeighbours <- sample(size, neigh) #pick random neighbours
                 diag(configTemp[, randomNeighbours]) <- abs(diag(configTemp[, randomNeighbours]) - 1)#flip
                 neighboursEUtility[randomNeighbours] <- apply(configTemp, 1, objFunc) 
                 maxNontaboo <- max(neighboursEUtility[tabuList == 0])
-                maxTaboo <- max(neighboursEUtility[tabuList == 1], 0)
-    
+                maxTaboo <- max(neighboursEUtility[tabuList == 1], -Inf)
+      
                 #find new move                
                 move <- ifelse(maxTaboo > maxNontaboo & maxTaboo > aspiration, 
                 ifelse(length(which(neighboursEUtility == maxTaboo)) == 1, 
                        which(neighboursEUtility == maxTaboo), sample(which(neighboursEUtility == maxTaboo), 1)),  
                 ifelse(length(which(neighboursEUtility == maxNontaboo & tabuList == 0)) == 1, 
                        which(neighboursEUtility == maxNontaboo & tabuList == 0), sample(which(neighboursEUtility == maxNontaboo & tabuList == 0), 1)))
-
+          
                 #if new utility is lower than old, add move to tabu list, else adjust aspiration, if necessary               
                 if (eUtility >= neighboursEUtility[move]){
                     tabuList[move] <- 1

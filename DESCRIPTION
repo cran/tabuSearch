@@ -1,13 +1,15 @@
 Package: tabuSearch
 Type: Package
-Title: R based tabu search algorithm
-Version: 1.1
-Date: 2012-03-06
-Author: Katarina Domijan
+Title: Tabu Search Algorithm for Binary Configurations
+Version: 1.1.1
+Date: 2018-03-22
+Author: Katarina Domijan 
 Maintainer: Katarina Domijan <domijank@tcd.ie>
-Description: R based tabu search algorithm for binary configurations
+BugReports: https://gitlab.com/domijank/tabuSearch/issues
+Description: Tabu search algorithm for binary configurations. A basic version of the algorithm as described by Fouskakis and Draper (2007) <doi:10.1111/j.1751-5823.2002.tb00174.x>.
 License: GPL-2
 LazyLoad: yes
-Packaged: 2012-03-06 21:44:41 UTC; kdomijan
+NeedsCompilation: no
+Packaged: 2018-03-23 11:39:45 UTC; kat
 Repository: CRAN
-Date/Publication: 2012-03-07 07:11:39
+Date/Publication: 2018-03-25 15:52:25 UTC

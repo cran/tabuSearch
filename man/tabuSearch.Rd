@@ -8,8 +8,8 @@ A tabu search algorithm for optimizing binary strings. It takes a user defined o
 
 The results can be plotted and summarized using \code{plot.tabu} and  \code{summary.tabu}.  }
 \usage{
-tabuSearch(size = 10, iters = 100, objFunc = NULL, config = NULL, neigh = size, 
-listSize = 9, nRestarts = 10, repeatAll = 1, verbose = FALSE)
+tabuSearch(size = 10, iters = 100, objFunc = NULL, config = NULL, 
+neigh = size, listSize = 9, nRestarts = 10, repeatAll = 1, verbose = FALSE)
 }
 
 \arguments{
@@ -78,12 +78,13 @@ evaluateSimple <- function(th)return(1)
 result <- tabuSearch(size = 20, iters = 100, objFunc = evaluateSimple) 
 
 
-
+\dontrun{
 # simulate 10-d data: 150 samples from 3 bivariate normals and 8 noise variables. 
 # Variable selection should recover the first two variables
 
 
-\dontrun{
+
+
 library(MASS)
 NF <- 10
 G <- 3
@@ -129,8 +130,6 @@ plot(res)
 plot(res, "tracePlot")
 
 summary(res, verbose = TRUE)
-
 }
 }
-
 
